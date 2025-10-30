@@ -40,7 +40,6 @@ class MyApp extends StatelessWidget {
               child: ConstrainedBox(
                 constraints: const BoxConstraints(
                   minWidth: 300,
-                  maxWidth: 1440,
                 ),
                 child: child!,
               ),

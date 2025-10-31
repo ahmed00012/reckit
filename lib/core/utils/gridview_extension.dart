@@ -26,7 +26,7 @@ extension GridviewExtension on double{
     } else if(this > 500) {
       return 1.1;
     } else{
-      return 1.6;
+      return 1.4;
     }
   }
 }

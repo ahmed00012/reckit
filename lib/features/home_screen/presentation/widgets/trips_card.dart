@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reckit/core/constants/colors.dart';
 import 'package:reckit/core/constants/text_styles.dart';
 import 'package:reckit/core/enum/trip_status.dart';
 import 'package:reckit/core/utils/app_utils.dart';
+import 'package:reckit/core/utils/gridview_extension.dart';
 import 'package:reckit/core/widgets/cached_network_image.dart';
 import 'package:reckit/gen/assets.gen.dart';
 import '../../data/models/trip_model.dart';
@@ -19,13 +21,16 @@ class TripCard extends StatelessWidget {
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(15),
-            child: CachedNetworkImageHelper(
-              imageUrl: trip.coverImage,
-              fit: BoxFit.fill,
-              width: double.infinity,
-              borderRadius: 0,
+          AspectRatio(
+            aspectRatio: 1.sw.childAspectRatio * 1.4,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: CachedNetworkImageHelper(
+                imageUrl: trip.coverImage,
+                fit: BoxFit.fill,
+                width: double.infinity,
+                borderRadius: 0,
+              ),
             ),
           ),
           Align(

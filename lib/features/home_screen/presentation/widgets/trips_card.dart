@@ -24,7 +24,6 @@ class TripCard extends StatelessWidget {
             child: CachedNetworkImageHelper(
               imageUrl: trip.coverImage,
               fit: BoxFit.fill,
-              height: 210,
               width: double.infinity,
               borderRadius: 0,
             ),
